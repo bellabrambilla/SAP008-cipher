@@ -1,35 +1,55 @@
 import cipher from './cipher.js';
 
-const codificar = document.getElementById('codificar');
-codificar.addEventListener('click', _______);
-
-const decodificar = document.getElementById('decodificar');
-decodificar.addEventListener('click', _______);
-
+const cod = document.getElementById('codificar');
+const decod = document.getElementById('decodificar');
 const traduzir = document.getElementById('traduzir');
-traduzir.addEventListener('click', encriptar);
+const crypto = cipher.codificar;
+const decrypto = cipher.decodificar; 
 
-function encriptar () {
+function codificarDecodificar(){ 
+    const inputCheck = document.querySelector('input[name="radioOpcoes"]:checked').value;
+    const codValue = cod.value;
+    const decodValue = decod.value;
+    
+       if( inputCheck === codValue ){
+        traduzir.classList.toggle("codificar");
+        console.log(inputCheck);
+       } 
+
+       else if( inputCheck === decodValue ){
+        traduzir.classList.toggle("decodificar");
+        console.log(inputCheck);
+       }
+       
+    //    else{
+    //     traduzir.classList.add(""); 
+    //     alert('Você precisa selecionar "codificar" ou "decodificar".');
+    //    }
+};
+
+function acao(){
+    let chave = document.getElementById('chave').value; 
     let codificaArea = document.getElementById('codificaArea').value;
-    let chave = document.getElementById('chave').value;
+    const classTrad = traduzir.className; 
 
-if (codificaArea == "" || chave == "") {
-    alert ("Você deve escrever sua mensagem e escolher a chave de codificação.");
+    if(codificaArea == "" || chave == ""){
+    alert("Você deve escrever sua mensagem e escolher a chave de codificação.")   
+    
+    }
 
-} else {
-     
+    if(classTrad==="codificar"){
+    crypto(chave, codificaArea);
 
+    }
+    
+    else if(classTrad==="decodificar"){
+    decrypto(chave, codificaArea);
 
-}
+    }
+    console.log(classTrad);
+};
 
+traduzir.addEventListener('click', acao);
+cod.addEventListener('click', codificarDecodificar);
+decod.addEventListener('click', codificarDecodificar);
 
-
-
-
-}
-
-
-
-
-
-console.log(cipher);

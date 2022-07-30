@@ -18,19 +18,22 @@
       </div>
       <h1 id="titulo">cifra de césar</h1>
       <h2 id="subtitulo"> < codifique sua mensagem > </h2>
-  <div id="codificaDecodifica">
-    <button id="codificar">codificar</button>
-    <button id="decodificar">decodificar</button>
+  <div id="radioToolbar"> 
+    <input type="radio" id="codificar" name="radioOpcoes" value="cod">
+    <label id="cod" for="codificar">codificar</label>
+
+    <input type="radio" id="decodificar" name="radioOpcoes" value="decod">
+    <label id="decod" for="decodificar">decodificar</label> 
   </div>
   <div id="input">
     <label for="chave">chave de codificação:</label>
     <input type="number" id="chave" min="1" max="99">
   </div>
   <div id="textoArea">
-    <textarea id="codificaArea"></textarea>
+    <textarea id="codificaArea" placeholder=".escreva aqui sua mensagem"></textarea>
     <textarea id="resultadoArea"></textarea>
   </div>
-  <button id="traduzir">traduzir</button>
+  <button id="traduzir" class="" >traduzir</button>
     <script src="index.js" type="module"></script>
   </body>
 </html>
