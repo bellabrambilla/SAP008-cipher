@@ -3,8 +3,9 @@ import cipher from './cipher.js';
 const cod = document.getElementById('codificar');
 const decod = document.getElementById('decodificar');
 const traduzir = document.getElementById('traduzir');
-const crypto = cipher.codificar;
-const decrypto = cipher.decodificar; 
+const crypto = cipher.encode;
+const decrypto = cipher.decode; 
+const resultadoArea = document.getElementById('resultadoArea');
 
 function codificarDecodificar(){ 
     const inputCheck = document.querySelector('input[name="radioOpcoes"]:checked').value;
@@ -12,20 +13,17 @@ function codificarDecodificar(){
     const decodValue = decod.value;
     
        if( inputCheck === codValue ){
-        traduzir.classList.toggle("codificar");
+        traduzir.className="codificar";
         console.log(inputCheck);
        } 
 
        else if( inputCheck === decodValue ){
-        traduzir.classList.toggle("decodificar");
+        traduzir.className="decodificar";
         console.log(inputCheck);
        }
        
-    //    else{
-    //     traduzir.classList.add(""); 
-    //     alert('Você precisa selecionar "codificar" ou "decodificar".');
-    //    }
-};
+      
+}
 
 function acao(){
     let chave = document.getElementById('chave').value; 
@@ -37,17 +35,27 @@ function acao(){
     
     }
 
+
     if(classTrad==="codificar"){
-    crypto(chave, codificaArea);
+    resultadoArea.innerHTML = crypto(Number(chave), codificaArea);
 
     }
     
     else if(classTrad==="decodificar"){
-    decrypto(chave, codificaArea);
+    resultadoArea.innerHTML = decrypto(chave, codificaArea);
 
     }
+
+    if (classTrad == "decodificar" || classTrad == "codificar"){
+        classTrad == ""
+    }
+    
+    else{
+        alert('Você precisa selecionar "codificar" ou "decodificar".');
+        }
+
     console.log(classTrad);
-};
+}
 
 traduzir.addEventListener('click', acao);
 cod.addEventListener('click', codificarDecodificar);
