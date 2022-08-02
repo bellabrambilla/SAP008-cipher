@@ -37,7 +37,7 @@ function acao() {
   }
 
   if (classTrad == "decodificar" || classTrad == "codificar") {
-    classTrad == ""; //reiniciar o processo pra não somar as funções
+    classTrad == ""; 
   } else {
     alert('Você precisa selecionar "codificar" ou "decodificar".');
   } 
