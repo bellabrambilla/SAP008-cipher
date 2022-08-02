@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>cifra de césar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="prnpeconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&family=Just+Me+Again+Down+Here&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Inter:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 id="titulo">cifra de césar</h1>
+    <h2 id="subtitulo">.codifique sua mensagem.</h2>
+    <div id="seletores">
+      <div id="radioToolbar">
+        <input type="radio" id="codificar" name="radioOpcoes" value="cod" />
+        <label id="cod" for="codificar">codificar</label>
+
+        <input type="radio" id="decodificar" name="radioOpcoes" value="decod" />
+        <label id="decod" for="decodificar">decodificar</label>
+      </div>
+      <div id="input">
+        <label for="chave">chave secreta (nº):</label>
+        <input type="number" id="chave" min="1" max="99"/>
+      </div>
+    </div>
+    <div id="textoArea">
+      <textarea
+        id="codificaArea"
+        placeholder="escreva aqui sua mensagem 🔒"
+      ></textarea>
+      <textarea id="resultadoArea" readonly></textarea>
+    </div>
+    <button id="traduzir" class="">traduzir</button>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
