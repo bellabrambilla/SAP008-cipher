@@ -15,7 +15,7 @@ const cipher = {
       let codigo = msg.charCodeAt(i);
 
       if (codigo >= 65 && codigo <= 90) {
-        resultado += String.fromCharCode(((codigo - 65 + input) % 26) + 65); //pega o código ASCII e transformar em letra de novo
+        resultado += String.fromCharCode(((codigo - 65 + input) % 26) + 65); 
       } else if (msg.charCodeAt(i) >= 32 && msg.charCodeAt(i) <= 64) {
         resultado += msg.charAt(i);
       }
